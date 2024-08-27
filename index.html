@@ -15,7 +15,15 @@
         <link type="text/css" rel="stylesheet" href="css/yourstyle.css">
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="images/logo.jpg">
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const validPaths = ['/', '/index.html', '/portfolio.html', '/about.html', '/contact.html'];
+    
+                if (!validPaths.includes(window.location.pathname)) {
+                    window.location.replace('/404.html');
+                }
+            });
+        </script>
     </head>
     <body>
         <!-- loader -->
