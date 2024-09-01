@@ -1339,14 +1339,17 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 	width:100%;
 }
 .team-holder li {
-	float:left;
-	width:50%;
-	padding:20px 20px 20px 0;
+    float: left;
+    width: 50%;
+}
+
+.team-holder li:nth-child(2n+1) {
+    clear: left;
 }
 .team-box {
 	float:left;
 	position:relative;
-	width:100%;
+	width:90%;
 	margin-bottom:20px;
 }
 .team-info {
@@ -1364,7 +1367,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 }
 .team-info h4 {
 	float:left;
-	width:100%;
+	width:90%;
 	text-align:left;
 	margin-top:10px;
 	color:#666;
@@ -1374,7 +1377,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-box:before {
 	content:'';
 	position:absolute;
-	right:0;
+	left:276px;
 	bottom:0;
 	height:6px;
 	width:50px;
@@ -1383,8 +1386,13 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-photo {
 	position:relative;
 	overflow:hidden;
-	width:100%;
+	width:90%;
 	float:left;
+}
+
+.bw-img {
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
 }
 .team-photo   span {
 	position:absolute;
@@ -1410,6 +1418,9 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-box:hover .overlay {
 	opacity:0.5;
 }
+.team-box:hover .bw-img {
+    filter: grayscale(0%);
+}
 .team-social {
 	position:absolute;
 	top:50%;
@@ -1431,6 +1442,8 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 	top:50px;
 	opacity:0;
 }
+
+
 /*------ resume story------------------------------------------------*/
 .custom-inner-holder {
 	float:left;
