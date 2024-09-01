@@ -1377,7 +1377,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-box:before {
 	content:'';
 	position:absolute;
-	left:276px;
+	left:270px;
 	bottom:0;
 	height:6px;
 	width:50px;
