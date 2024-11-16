@@ -61,7 +61,7 @@ body{
 	height:8px;
 	border-radius:4px;
 	animation-name:bounce_movingBallG;
-	animation-duration:1.6s;
+	animation-duration:1.3s;
 	animation-iteration-count:infinite;
 	animation-direction:linear;
 }
@@ -1339,17 +1339,14 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 	width:100%;
 }
 .team-holder li {
-    float: left;
-    width: 50%;
-}
-
-.team-holder li:nth-child(2n+1) {
-    clear: left;
+	float:left;
+	width:50%;
+	padding:20px 20px 20px 0;
 }
 .team-box {
 	float:left;
 	position:relative;
-	width:90%;
+	width:100%;
 	margin-bottom:20px;
 }
 .team-info {
@@ -1367,7 +1364,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 }
 .team-info h4 {
 	float:left;
-	width:90%;
+	width:100%;
 	text-align:left;
 	margin-top:10px;
 	color:#666;
@@ -1377,7 +1374,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-box:before {
 	content:'';
 	position:absolute;
-	left:270px;
+	right:0;
 	bottom:0;
 	height:6px;
 	width:50px;
@@ -1386,13 +1383,8 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-photo {
 	position:relative;
 	overflow:hidden;
-	width:90%;
+	width:100%;
 	float:left;
-}
-
-.bw-img {
-    filter: grayscale(100%);
-    transition: all 0.3s ease-in-out;
 }
 .team-photo   span {
 	position:absolute;
@@ -1418,9 +1410,6 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .team-box:hover .overlay {
 	opacity:0.5;
 }
-.team-box:hover .bw-img {
-    filter: grayscale(0%);
-}
 .team-social {
 	position:absolute;
 	top:50%;
@@ -1442,8 +1431,6 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 	top:50px;
 	opacity:0;
 }
-
-
 /*------ resume story------------------------------------------------*/
 .custom-inner-holder {
 	float:left;
@@ -2661,7 +2648,14 @@ section.parallax-section  .pr-title:after {
 .pr-tags ul li a:hover {
 	color:#000;
 }
+.parallax-item {
+	margin:50px 0;}
 
+.parallax-item  img{
+	width:100%;
+	height:auto;
+	opacity:0.9;
+}
 .parallax-text {
 	position:absolute;
 	bottom:40%;
@@ -3550,7 +3544,6 @@ section.parallax-section  .pr-title:after {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
-
 .about-widget img {
 	width:100%;
 	height:auto;
@@ -4274,11 +4267,8 @@ header.main-header  {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .bg {
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    width: 100%;
-    height: 100vh; /* or use a specific height value */
-    transform: none; /* Only if translateY isn't needed */
+	background-attachment: scroll !important;
+	-webkit-background-size:cover;
+	background-position:center;
 }
 }
