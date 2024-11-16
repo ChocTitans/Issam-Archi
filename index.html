@@ -15,7 +15,6 @@
         <link type="text/css" rel="stylesheet" href="css/yourstyle.css">
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="images/logo.jpg">
-
     </head>
     <body>
         <!-- loader -->
@@ -43,11 +42,9 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="index" class="act-link">Accueil </a>
+                                <a href="index" class="act-link">Nos Projets</a>
                             </li>
-                            <li>
-                                <a href="portfolio">Nos Projets</a>
-                            </li>
+
                             <li>
                                 <a href="about"  >L'agence</a>
                                 <ul>
@@ -87,14 +84,16 @@
                             <div class="swiper-wrapper"  >
                                 <!-- swiper-slide-->
                                 <div class="swiper-slide">
-                                    <div class="bg"  data-bg="images/bg/1.jpg" data-scrollax="properties: { translateY: '250px' }" ></div>
-                                    <a href="images/bg/1.jpg" class="gallery-popup image-popup"><i class="fa fa-search-plus"  ></i></a>
+                                    <img src="images/lycee-braika/01.jpg" width="2000" height="900" alt="Quartier Eco">
+                                    <a href="images/lycee-braika/01.jpg" class="gallery-popup image-popup">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
                                     <div class="overlay"></div>
                                     <!-- hero-wrap-->           
                                     <div class="hero-wrap alt">
                                         <div class="container">
                                             <div class="hero-item">
-                                            	<h3>Greenios Env</h3>
+                                                <h3>Lycée Braika</h3>
                                                 <div class="clearfix"></div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -105,14 +104,16 @@
                                 <!-- swiper-slide end-->
                                 <!-- swiper-slide-->
                                 <div class="swiper-slide">
-                                    <div class="bg"  data-bg="images/bg/2.jpg" data-scrollax="properties: { translateY: '250px' }" ></div>
-                                    <a href="images/bg/2.jpg" class="  gallery-popup image-popup"><i class="fa fa-search-plus"  ></i></a>
+                                    <img src="images/eco-quartier/VUEEXT1.jpg" width="1600" height="650" alt="Honoris">
+                                    <a href="images/eco-quartier/VUEEXT1.jpg" class="gallery-popup image-popup">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
                                     <div class="overlay"></div>
                                     <!-- hero-wrap-->           
                                     <div class="hero-wrap alt">
                                         <div class="container">
                                             <div class="hero-item">
-                                            	<h3>molestie faucibus</h3>                                            
+                                                <h3>Quartier Eco</h3>                                            
                                                 <div class="clearfix"></div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -123,14 +124,16 @@
                                 <!-- swiper-slide end-->
                                 <!-- swiper-slide-->
                                 <div class="swiper-slide">
-                                    <div class="bg"  data-bg="images/bg/4.jpg" data-scrollax="properties: { translateY: '250px' }" ></div>
-                                    <a href="images/bg/4.jpg" class="  gallery-popup image-popup"><i class="fa fa-search-plus"  ></i></a>
+                                    <img src="images/centre-viro/AXO 3.jpg" width="1600" height="700" alt="Centre Virologie">
+                                    <a href="images/centre-viro/AXO 3.jpg" class="gallery-popup image-popup">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
                                     <div class="overlay"></div>
                                     <!-- hero-wrap-->           
                                     <div class="hero-wrap alt">
                                         <div class="container">
                                             <div class="hero-item">
-                                            	<h3>LA PUERTA</h3>                                            
+                                                <h3>Centre Virologie</h3>                                            
                                                 <div class="clearfix"></div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -141,14 +144,16 @@
                                 <!-- swiper-slide end-->
                                 <!-- swiper-slide-->
                                 <div class="swiper-slide">
-                                    <div class="bg"  data-bg="images/bg/23.jpg" data-scrollax="properties: { translateY: '250px' }" ></div>
-                                    <a href="images/bg/23.jpg" class="gallery-popup image-popup"><i class="fa fa-search-plus"  ></i></a>
+                                    <img src="images/honoris/01.jpg" width="1600" height="700" alt="Cras lacinia magna">
+                                    <a href="images/honoris/01.jpg" class="gallery-popup image-popup">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
                                     <div class="overlay"></div>
                                     <!-- hero-wrap-->           
                                     <div class="hero-wrap alt">
                                         <div class="container">
                                             <div class="hero-item">
-                                            	<h3>Cras lacinia magna</h3>                                              
+                                                <h3>Honoris</h3>                                              
                                                 <div class="clearfix"></div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -166,100 +171,231 @@
                     <!--content-->	 
                     <div class="content">
                         <!--section -->	                             	 
-                        <section >
+                        <section>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="pr-title">
                                             Nos Travaux Remarquables
+                                            <div class="filter-options">
+                                                <button onclick="filterProjects('all')">All</button>
+                                                <button onclick="filterProjects('design')">Design</button>
+                                                <button onclick="filterProjects('architecture')">Architecture</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item -->	
                                 <div class="row">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
-                                        <div class="parallax-item fl-wrap" data-scrollax-parent="true">
+                                        <div class="project-item design" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
                                                 <span>01.</span>
                                                 <ul>
                                                     <li><a href="#">Design</a></li>
-                                                    <li><a href="#">Architecture </a></li>
+                                                    <li><a href="#">Architecture</a></li>
                                                 </ul>
                                             </div>
-                                            <img  src="images/folio/2.jpg"   alt="">
-                                            <div class="parallax-text left-pos" data-scrollax="properties: { translateY: '-250px' }">
-                                                <h3><a href="portfolio-single">Théâtre de Stoep</a></h3>
-                                                <a href="portfolio-single" class="btn float-btn flat-btn">Voir</a>
+                                            <img src="images/centre-viro/VUE 1.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text left-pos">
+                                                <h3><a href="centre-virologie.html">Centre de Virologie</a></h3>
+                                                <a href="centre-virologie.html" class="btn float-btn flat-btn">Voir</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	
-                                <!--parallax-item -->	
+                                <br><br><br><br><br><br><br><br>
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <div class="parallax-item fl-wrap" data-scrollax-parent="true">
+                                        <div class="project-item design" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
                                                 <span>02.</span>
                                                 <ul>
                                                     <li><a href="#">Design</a></li>
-                                                    <li><a href="#">Architecture </a></li>
                                                 </ul>
                                             </div>
-                                            <img  src="images/folio/11.jpg"   alt="">
-                                            <div class="parallax-text right-pos" data-scrollax="properties: { translateY: '-250px' }">
-                                                <h3><a href="portfolio-single">New Acropolis Museum</a></h3>
-                                                <a href="portfolio-single" class="btn float-btn flat-btn">Voir</a>
+                                            <img src="images/clinic-veto/04.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text right-pos">
+                                                <h3><a href="clinic-veterinaire.html">Clinique Veterinaire </a>ELKOHEN</h3>
+                                                <a href="clinic-veterinaire.html" class="btn float-btn flat-btn">Voir</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	                    
-                                <!--parallax-item -->	
+                                <br><br><br><br><br><br><br><br>
                                 <div class="row">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
-                                        <div class="parallax-item fl-wrap" data-scrollax-parent="true">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
                                                 <span>03.</span>
                                                 <ul>
                                                     <li><a href="#">Design</a></li>
-                                                    <li><a href="#">Architecture </a></li>
+                                                    <li><a href="#">Architecture</a></li>
                                                 </ul>
                                             </div>
-                                            <img  src="images/folio/16.jpg"   alt="">
-                                            <div class="parallax-text left-pos" data-scrollax="properties: { translateY: '-250px' }">
-                                                <h3><a href="portfolio-single">Theatre de Stoep</a></h3>
-                                                <a href="portfolio-single" class="btn float-btn flat-btn">Voir</a>
+                                            <img src="images/eco-quartier/VUEEXT1.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text left-pos">
+                                                <h3><a href="eco-quartier.html">Eco Quartier</a></h3>
+                                                <a href="eco-quartier.html" class="btn float-btn flat-btn">Voir</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	
-                                <!--parallax-item -->	
+                                <br><br><br><br><br><br><br><br>
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <div class="parallax-item fl-wrap" data-scrollax-parent="true">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
                                                 <span>04.</span>
                                                 <ul>
                                                     <li><a href="#">Design</a></li>
-                                                    <li><a href="#">Architecture </a></li>
+                                                    <li><a href="#">Architecture</a></li>
                                                 </ul>
                                             </div>
-                                            <img  src="images/folio/19.jpg"   alt="">
-                                            <div class="parallax-text right-pos" data-scrollax="properties: { translateY: '-250px' }">
-                                                <h3><a href="portfolio-single">New Acropolis Museum</a></h3>
-                                                <a href="portfolio-single" class="btn float-btn flat-btn">Voir</a>
+                                            <img src="images/ecole-alouhmy/VUE 02.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text right-pos">
+                                                <h3><a href="ecole-alouhmy.html">École Alouhmy</a></h3>
+                                                <a href="ecole-alouhmy.html" class="btn float-btn flat-btn">Voir</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	                       
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>05.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/honoris/07.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text left-pos">
+                                                <h3><a href="honoris.html">Honoris</a></h3>
+                                                <a href="honoris.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>06.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/lycee-braika/04.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text right-pos">
+                                                <h3><a href="lycee-braika.html">Lycée Braika Zerouali</a></h3>
+                                                <a href="lycee-braika.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>07.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/mazgan/03.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text left-pos">
+                                                <h3><a href="pullman-mazagan.html">Pullman Mazagan</a></h3>
+                                                <a href="pullman-mazagan.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>08.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/crmef/A7405426.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text right-pos">
+                                                <h3><a href="crmef.html">CRMEF</a></h3>
+                                                <a href="crmef.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>09.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/cndh/03.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text left-pos">
+                                                <h3><a href="cndh.html">CNDH</a></h3>
+                                                <a href="cndh.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br><br><br><br><br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="project-item architecture" data-scrollax-parent="true">
+                                            <div class="parallax-header fl-wrap">
+                                                <span>08.</span>
+                                                <ul>
+                                                    <li><a href="#">Design</a></li>
+                                                    <li><a href="#">Architecture</a></li>
+                                                </ul>
+                                            </div>
+                                            <img src="images/lycee-boujdour/04.jpg" alt="" width="800" height="530">
+                                            <div class="parallax-text right-pos">
+                                                <h3><a href="lycee-boujdour.html">Lycée Boujdour</a></h3>
+                                                <a href="lycee-boujdour.html" class="btn float-btn flat-btn">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="partcile-dec" data-parcount="250"></div>
                         </section>
+
+                        <script>
+                            function filterProjects(category) {
+                                var items = document.querySelectorAll('.project-item');
+                        
+                                items.forEach(function(item) {
+                                    if (category === 'all' || item.classList.contains(category)) {
+                                        item.classList.remove('hidden');
+                                    } else {
+                                        item.classList.add('hidden');
+                                    }
+                                });
+                            }
+                        </script>
                         <!--section end  -->	
                         <!--section -->	
                         <section>
@@ -342,7 +478,7 @@
             <!-- Share container  end-->
             <!-- footer -->
             <footer class="main-footer">
-                <div class="fixed-title"><span>Accueil</span></div>
+                <div class="fixed-title"><span>Nos Projets</span></div>
                 <div class="footer-social">
                     <ul>
                         <li><a href="mailto:contact@midsatelier.com" target="_blank"><i class="fa fa-envelope"></i></a></li>

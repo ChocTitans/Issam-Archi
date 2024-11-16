@@ -2661,14 +2661,7 @@ section.parallax-section  .pr-title:after {
 .pr-tags ul li a:hover {
 	color:#000;
 }
-.parallax-item {
-	margin:50px 0;}
 
-.parallax-item  img{
-	width:100%;
-	height:auto;
-	opacity:0.7;
-}
 .parallax-text {
 	position:absolute;
 	bottom:40%;
@@ -3557,6 +3550,7 @@ section.parallax-section  .pr-title:after {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
+
 .about-widget img {
 	width:100%;
 	height:auto;
@@ -4280,8 +4274,11 @@ header.main-header  {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .bg {
-	background-attachment: scroll !important;
-	-webkit-background-size:cover;
-	background-position:center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    width: 100%;
+    height: 100vh; /* or use a specific height value */
+    transform: none; /* Only if translateY isn't needed */
 }
 }
