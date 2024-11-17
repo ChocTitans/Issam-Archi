@@ -126,6 +126,7 @@ blockquote p {
 	text-align:left;
 	font-weight:bold;
 }
+
 /* ---------Content Styles--------------------------------------*/
 #main{
 	height:100%;
@@ -2668,12 +2669,23 @@ section.parallax-section  .pr-title:after {
 	color:#000;
 }
 .parallax-item {
-	margin:50px 0;}
+    margin: 50px 0;
+    opacity: 1;
+    transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease;
+    height: auto;
+    overflow: hidden;
+}
 
-.parallax-item  img{
-	width:100%;
-	height:auto;
-	opacity:0.9;
+.parallax-item.inactive {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    visibility: hidden;  /* This ensures items are hidden from screen readers and interaction */
+}
+.parallax-item img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
 }
 .parallax-text {
 	position:absolute;

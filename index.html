@@ -171,15 +171,25 @@
                         <!--section -->	                             	 
                         <section >
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="pr-title">
-                                            Nos Travaux Remarquables
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="pr-title">
+                                                Nos Travaux Remarquables
+                                            </div>
+                                            <div class="parallax-header fl-wrap" id="categories" style="margin-top: 20px;">
+                                                <ul>
+                                                    <li><a href="#" data-target="row-1">Hospitalier</a></li>
+                                                    <li><a href="#" data-target="row-2">Educatif</a></li>
+                                                    <li><a href="#" data-target="row-3">Tertiaire</a></li>
+                                                    <li><a href="#" data-target="row-4">Restauration</a></li>
+                                                    <li><a href="#" data-target="all">Tous</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <!--parallax-item -->	
-                                <div class="row">
+                                <div id="row-1" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -200,7 +210,7 @@
                                 </div>
                                 <!--parallax-item end-->	
                                 <!--parallax-item -->	
-                                <div class="row">
+                                <div id="row-1" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
@@ -220,7 +230,7 @@
                                 </div>
                                 <!--parallax-item end-->	                    
                                 <!--parallax-item -->	
-                                <div class="row">
+                                <div id="row-5" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -241,7 +251,7 @@
                                 </div>
                                 <!--parallax-item end-->	
                                 <!--parallax-item -->	
-                                <div class="row">
+                                <div id="row-2" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
@@ -260,7 +270,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-2" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -280,7 +290,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-2" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
@@ -299,7 +309,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-4" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -319,7 +329,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-3" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
@@ -338,7 +348,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-5" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -358,7 +368,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div id="row-2" class="row parallax-item"">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
                                             <div class="parallax-header fl-wrap">
@@ -480,6 +490,41 @@
         </div>
         <!-- Main end -->
         <!--=============== scripts  ===============-->
+        <script>
+document.querySelectorAll('#categories a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('data-target');
+
+        document.querySelectorAll('.row.parallax-item').forEach(item => {
+            if (targetId === 'all' || item.id === targetId) {
+                item.classList.remove('inactive');
+                item.style.visibility = 'visible';  // Make element visible
+                item.style.height = 'auto';  // Allow natural height
+                const height = item.offsetHeight; // Force reflow to correctly transition
+                item.style.height = `${height}px`;  // Set specific height for transition
+                item.offsetHeight;  // Force reflow (important for transition to work)
+                item.style.opacity = 1;  // Ensure full opacity transition
+                item.style.height = 'auto';  // Reset to auto after transition
+            } else {
+                item.style.height = `${item.offsetHeight}px`;  // Fix height at the start
+                item.offsetHeight; // Reflow to ensure height is known before transition
+                item.classList.add('inactive');
+                item.style.opacity = 0;  // Fade out
+                item.style.height = 0;  // Collapse for space removal
+                item.style.overflow = 'hidden';  // Hide overflow to remove content spill
+                
+                item.addEventListener('transitionend', function handler(e) {
+                    if (e.propertyName === 'height') {
+                        item.style.visibility = 'hidden'; // Make sure it's completely invisible
+                        item.removeEventListener('transitionend', handler); // Clean up event listener
+                    }
+                });
+            }
+        });
+    });
+});
+        </script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
