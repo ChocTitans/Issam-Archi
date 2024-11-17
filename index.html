@@ -491,6 +491,14 @@
         <!-- Main end -->
         <!--=============== scripts  ===============-->
         <script>
+            document.querySelectorAll('.clients-list a').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevents the default action of the anchor tag
+                });
+            });
+        </script>
+
+        <script>
 document.querySelectorAll('#categories a').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
