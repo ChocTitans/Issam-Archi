@@ -2,7 +2,7 @@
 function initBalkon() {
 
 	//   loader ------------------
-    $(".loader").fadeOut(1600, function() {
+    $(".loader").fadeOut(600, function() {
         $("#main").animate({
             opacity: "1"
         }, 500);
