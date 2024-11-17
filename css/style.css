@@ -1671,27 +1671,35 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 }
 /*------ clients  ------------------------------------------------*/
 .clients-list {
-	float:left;
-	width:100%;
+    width: 100%;
+    text-align: center; /* Center the list */
 }
+
+.clients-list ul {
+    padding: 0;
+    list-style: none; /* Remove bullets */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-around; /* Evenly distribute items */
+    align-items: center; /* Vertically center items */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
 .clients-list li {
-	float:left;
-	width:20%;
-	padding:5px 5px 5px 0;
+    margin: 0 24px; /* Remove extra margin */
 }
-.clients-list li a:hover {
-	opacity:0.6;
-}
+
 .clients-list a img {
-	float:left;
-	width:100%;
-	height:auto;
+    height: 60px; /* Set a consistent height */
+    width: auto; /* Maintain aspect ratio */
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    transition: opacity 0.3s ease;
 }
+
 .clients-list a:hover img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
+    opacity: 0.8; /* Visual feedback on hover */
 }
 /*------ order  ------------------------------------------------*/
 .order-item h3 {
