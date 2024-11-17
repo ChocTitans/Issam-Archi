@@ -61,7 +61,7 @@ body{
 	height:8px;
 	border-radius:4px;
 	animation-name:bounce_movingBallG;
-	animation-duration:1.1s;
+	animation-duration:1.3s;
 	animation-iteration-count:infinite;
 	animation-direction:linear;
 }
@@ -126,7 +126,6 @@ blockquote p {
 	text-align:left;
 	font-weight:bold;
 }
-
 /* ---------Content Styles--------------------------------------*/
 #main{
 	height:100%;
@@ -1673,25 +1672,25 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 /*------ clients  ------------------------------------------------*/
 .clients-list {
     width: 100%;
-    text-align: center;
+    text-align: center; /* Center the list */
 }
 
 .clients-list ul {
     padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap */
+    list-style: none; /* Remove bullets */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-around; /* Evenly distribute items */
+    align-items: center; /* Vertically center items */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .clients-list li {
-    margin: 0 12px; /* Adjust margin to fit better on mobile */
+    margin: 0 24px; /* Remove extra margin */
 }
 
 .clients-list a img {
-    height: 60px;
-    width: auto;
+    height: 60px; /* Set a consistent height */
+    width: auto; /* Maintain aspect ratio */
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: opacity 0.3s ease;
@@ -1700,18 +1699,7 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .clients-list a:hover img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
-    opacity: 0.8;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .clients-list ul {
-        justify-content: center; /* Center items on smaller screens */
-    }
-
-    .clients-list li {
-        margin: 20px 0; /* Increase top/bottom margin for spacing when stacked */
-    }
+    opacity: 0.8; /* Visual feedback on hover */
 }
 /*------ order  ------------------------------------------------*/
 .order-item h3 {
@@ -2680,23 +2668,23 @@ section.parallax-section  .pr-title:after {
 	color:#000;
 }
 .parallax-item {
-    margin: 50px 0;
+	margin:50px 0;
     opacity: 1;
     transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease;
-    height: auto;
-    overflow: hidden;
+	height: auto;
 }
 
 .parallax-item.inactive {
-    opacity: 0;
-    height: 0;
-    margin: 0;
-    visibility: hidden;  /* This ensures items are hidden from screen readers and interaction */
+	opacity: 0;
+	height: 0;
+	margin: 0;
+	visibility: hidden;  /* This ensures items are hidden from screen readers and interaction */
 }
-.parallax-item img {
-    width: 100%;
-    height: auto;
-    opacity: 0.9;
+
+.parallax-item  img{
+	width:100%;
+	height:auto;
+	opacity:0.9;
 }
 .parallax-text {
 	position:absolute;
