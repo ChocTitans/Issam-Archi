@@ -4207,32 +4207,49 @@ section.header-section .overlay , section.parallax-section .overlay.op1 {
 }
 section.parallax-section {
     padding: 150px 0;
+}.inline-filter .gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
 }
-.inline-filter .gallery-filters{
-	width:100%;
-	padding:20px 0;
-}
+
 .inline-filter .gallery-filters a {
-	width:100%;
-	margin-right:0;
-	text-align:left;
-	margin-bottom:15px;
-	padding-left:0;
+    margin: 5px; /* Add some spacing between items */
+    text-align: center; /* Center text within each link */
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
 .bold-filter.inline-filter .count-folio {
-    margin-left: 0;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
     padding: 15px 0;
-    top: -3px;
+    top: 0;
 }
-.bold-filter.inline-filter .gallery-filters a:before  , .bold-filter.inline-filter .count-folio:before , .inline-facts:nth-child(2):before  {
-	display:none;
+
+.bold-filter.inline-filter .gallery-filters a:before,
+.bold-filter.inline-filter .count-folio:before,
+.inline-facts:nth-child(2):before {
+    display: none;
 }
+
 .bold-filter {
     margin-top: 0;
     margin-bottom: 50px;
 }
+
 .inline-facts {
     width: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .inline-filter .gallery-filters {
+        flex-direction: row; /* Ensure horizontal layout on smaller screens */
+    }
 }
 .menufilter {
 	position:absolute;
