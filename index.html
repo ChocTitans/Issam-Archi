@@ -171,24 +171,29 @@
                         <!--section -->	                             	 
                         <section >
                             <div class="container">
+                                
                                 <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="pr-title">
-                                                Nos Travaux Remarquables
-                                            </div>
-                                            <div class="parallax-header fl-wrap" id="categories" style="margin-top: 20px;">
-                                                <ul>
-                                                    <li><a href="#" data-target="row-1">Hospitalier</a></li>
-                                                    <li><a href="#" data-target="row-2">Educatif</a></li>
-                                                    <li><a href="#" data-target="row-3">Tertiaire</a></li>
-                                                    <li><a href="#" data-target="row-4">Restauration</a></li>
-                                                    <li><a href="#" data-target="all">Tous</a></li>
-                                                </ul>
-                                            </div>
+                                    <!-- filter -->
+                                    <div class="pr-title">
+                                        Nos Travaux Remarquables
+                                    </div>
+                                    <div class="filter-holder inline-filter bold-filter fl-wrap">
+                                        <div class="filter-button"><span>Filter : </span></div>
+                                        <div class="gallery-filters" id="categories">
+                                            <a href="#" class="gallery-filter gallery-filter-active"  data-target="all">Tous</a>
+                                            <a href="#" class="gallery-filter " data-target="row-1">Hospitalier</a>
+                                            <a href="#" class="gallery-filter" data-target="row-2">Educatif</a>
+                                            <a href="#" class="gallery-filter" data-target="row-3">Tertiaire</a>
+                                            <a href="#" class="gallery-filter" data-target="row-4">Restauration</a>
+
+                                        </div>
+                                        <div class="count-folio">
+                                            <div class="num-album"></div>
+                                            <div class="all-album"></div>
                                         </div>
                                     </div>
-                                <!--parallax-item -->	
+                                    <!-- filter end-->
+                                </div>
                                 <div id="row-1" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
@@ -208,8 +213,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	
-                                <!--parallax-item -->	
                                 <div id="row-1" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -228,8 +231,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	                    
-                                <!--parallax-item -->	
                                 <div id="row-5" class="row parallax-item">
                                     <div class="col-md-5"></div>
                                     <div class="col-md-7">
@@ -249,8 +250,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--parallax-item end-->	
-                                <!--parallax-item -->	
                                 <div id="row-2" class="row parallax-item">
                                     <div class="col-md-7">
                                         <div class="parallax-item fl-wrap" data-scrollax-parent="true">
@@ -498,37 +497,85 @@
             });
         </script>
 
-        <script>
-document.querySelectorAll('#categories a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('data-target');
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
-        document.querySelectorAll('.row.parallax-item').forEach(item => {
-            if (targetId === 'all' || item.id === targetId) {
-                item.classList.remove('inactive');
-                item.style.visibility = 'visible';  // Make element visible
-                item.style.height = 'auto';  // Allow natural height
-                const height = item.offsetHeight; // Force reflow to correctly transition
-                item.style.height = `${height}px`;  // Set specific height for transition
-                item.offsetHeight;  // Force reflow (important for transition to work)
-                item.style.opacity = 1;  // Ensure full opacity transition
-                item.style.height = 'auto';  // Reset to auto after transition
-            } else {
-                item.style.height = `${item.offsetHeight}px`;  // Fix height at the start
-                item.offsetHeight; // Reflow to ensure height is known before transition
-                item.classList.add('inactive');
-                item.style.opacity = 0;  // Fade out
-                item.style.height = 0;  // Collapse for space removal
-                item.style.overflow = 'hidden';  // Hide overflow to remove content spill
-                
-                item.addEventListener('transitionend', function handler(e) {
-                    if (e.propertyName === 'height') {
-                        item.style.visibility = 'hidden'; // Make sure it's completely invisible
-                        item.removeEventListener('transitionend', handler); // Clean up event listener
-                    }
-                });
-            }
+<script>
+$(document).ready(function() {
+    // Initialize Isotope
+    var $galleryItems = $('.gallery-items').isotope({
+        itemSelector: '.gallery-item'
+    });
+
+    // Event listener for filter clicks
+    $('.gallery-filters').on('click', 'a.gallery-filter', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+
+        // Get the filter value from the data-target attribute
+        var filterValue = $(this).attr('data-target');
+
+        // Apply the filter to Isotope
+        $galleryItems.isotope({ filter: filterValue });
+
+        // Remove the active class from all filters
+        $('.gallery-filters a.gallery-filter').removeClass('gallery-filter-active');
+
+        // Add the active class to the clicked filter
+        $(this).addClass('gallery-filter-active');
+    });
+});
+</script>
+
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const allProjects = document.querySelectorAll('.row.parallax-item');
+    const numAlbumElement = document.querySelector('.num-album');
+    const allAlbumElement = document.querySelector('.all-album');
+
+    // Function to update project counts
+    function updateProjectCounts() {
+        const visibleProjects = Array.from(allProjects).filter(item => !item.classList.contains('inactive'));
+        numAlbumElement.textContent = visibleProjects.length;
+        allAlbumElement.textContent = allProjects.length;
+    }
+
+    // Initial count update
+    updateProjectCounts();
+
+    document.querySelectorAll('#categories a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('data-target');
+
+            allProjects.forEach(item => {
+                if (targetId === 'all' || item.id === targetId) {
+                    item.classList.remove('inactive');
+                    item.style.visibility = 'visible';
+                    item.style.height = 'auto';
+                    const height = item.offsetHeight;  // Reflow
+                    item.style.height = `${height}px`;
+                    item.offsetHeight;  // Reflow
+                    item.style.opacity = 1;
+                    item.style.height = 'auto';
+                } else {
+                    item.style.height = `${item.offsetHeight}px`;
+                    item.offsetHeight;  // Reflow
+                    item.classList.add('inactive');
+                    item.style.opacity = 0;
+                    item.style.height = 0;
+                    item.style.overflow = 'hidden';
+
+                    item.addEventListener('transitionend', function handler(e) {
+                        if (e.propertyName === 'height') {
+                            item.style.visibility = 'hidden';
+                            item.removeEventListener('transitionend', handler);
+                        }
+                    });
+                }
+            });
+
+            // Update project counts after each filter click
+            updateProjectCounts();
         });
     });
 });
