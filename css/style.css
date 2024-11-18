@@ -4223,11 +4223,12 @@ section.parallax-section {
 }
 
 .bold-filter.inline-filter .count-folio {
-    display: flex; /* Use flexbox for centering */
+    display: center; /* Use flexbox for centering */
     justify-content: center;
     align-items: center;
-    padding: 15px 0;
+    padding: 20px 0;
     top: 0;
+	margin-left: 100px;
 }
 
 .bold-filter.inline-filter .gallery-filters a:before,
