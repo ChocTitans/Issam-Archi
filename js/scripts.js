@@ -100,7 +100,7 @@ function initBalkon() {
             });
         }
     }
-    var f = $(".parallax-header").length;
+    var f = $(".gallery-item").length;
     $(".all-album , .num-album").html(f);
     e();
     $(window).on("load", function() {
