@@ -1672,25 +1672,25 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 /*------ clients  ------------------------------------------------*/
 .clients-list {
     width: 100%;
-    text-align: center; /* Center the list */
+    text-align: center;
 }
 
 .clients-list ul {
     padding: 0;
-    list-style: none; /* Remove bullets */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-around; /* Evenly distribute items */
-    align-items: center; /* Vertically center items */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap */
 }
 
 .clients-list li {
-    margin: 0 24px; /* Remove extra margin */
+    margin: 0 12px; /* Adjust margin to fit better on mobile */
 }
 
 .clients-list a img {
-    height: 60px; /* Set a consistent height */
-    width: auto; /* Maintain aspect ratio */
+    height: 60px;
+    width: auto;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: opacity 0.3s ease;
@@ -1699,7 +1699,18 @@ section.parallax-section .section-title h2  , section.parallax-section  .section
 .clients-list a:hover img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
-    opacity: 0.8; /* Visual feedback on hover */
+    opacity: 0.8;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .clients-list ul {
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .clients-list li {
+        margin: 20px 0; /* Increase top/bottom margin for spacing when stacked */
+    }
 }
 /*------ order  ------------------------------------------------*/
 .order-item h3 {
