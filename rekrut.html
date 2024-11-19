@@ -17,21 +17,6 @@
         <link rel="shortcut icon" href="images/logo.jpg">
 
         <style>
-            .map-box {
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%; /* 16:9 aspect ratio */
-                height: 0;
-                overflow: hidden;
-            }
-    
-            #map-canvas {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
         </style>
     </head>
     <body>
@@ -106,23 +91,31 @@
                         </section>
                         <!--  section  end-->
                         <!--  section  -->
-                        <div class="contact-details-wrap fl-wrap">
+                       
+                        <div class="contact-details-wrap fl-wrap" style="margin-top: 100px;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <div class="small-sec-title">
+                                    <div class="small-sec-title" style="	text-align:center;margin-left: 40px;">
                                         <h3>Recrutement </h3>
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-9">
+                                    <p style="color: grey; margin-top: 70px; margin-left: 50px;">Vous êtes Architecte, Designer ou Graphiste et vous avez envie de rejoindre une équipe jeune et dynamique ? Vous êtes autonome et souhaitez travailler sur des projets divers et variés?</p>
+                                    <p style="margin-left: 50px;"><b>Veuillez nous laissez un message en y joignant un CV et nous nous ferons un plaisir de vous recontacter.</b></p>
+                                    
                                     <!-- contact form -->
-                                    <div class="contact-form-holder fl-wrap">
+                                    <div class="contact-form-holder fl-wrap" style="margin-bottom: 300px; margin-left: 10px;">
                                         <div id="contact-form">
                                             <div id="message"></div>
                                             <form method="post" action="php/contact.php" name="contactform" id="contactform">
-                                                <input name="name" type="text" id="name"  onClick="this.select()" value="Name" >
-                                                <input name="email" type="text" id="email" onClick="this.select()" value="E-mail" >
+                                                <input name="Prénom" type="text" id="name"  onClick="this.select()" value="Prénom" >
+                                                <input name="Nom" type="text" id="name"  onClick="this.select()" value="Nom" >
+                                                <input name="E-mail" type="text" id="email" onClick="this.select()" value="E-mail" >
                                                 <input type="text"  name="phone" id="phone" onClick="this.select()" value="Phone" /> 
-                                                <button type="submit"  id="submit"  data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Send Message </span></button>
+                                                <input type="file" name="cv" id="cv" onClick="this.select()" style="display: none;" />
+                                                <label for="cv" style="background:#f4f4f4; border: none; padding-left: 30px; color: #2c2c2c; width: 20%; cursor: pointer; display: inline-block;">Joindre votre CV</label>
+                                                <button type="submit"  id="submit"  data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Postuler </span></button>
                                             </form>
                                         </div>
                                     </div>

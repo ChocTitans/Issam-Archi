@@ -3201,7 +3201,7 @@ section.parallax-section  .pr-title:after {
 }
 #contact-form input[type="text"] , #contact-form textarea , #comment-form input[type="text"]  , #comment-form textarea{
 	float:left;
-	width: 100%;
+	width: 50%;
 	background:#f4f4f4;
 	margin-bottom:20px;
 	font-size: 12px;
